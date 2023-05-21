@@ -13,11 +13,11 @@ class App extends Component {
   addContact = ({ name, number }) => {
     const { contacts } = this.state;
     const existingContact = contacts.find(
-      contact => contact.name.toLowerCase() === name.toLowerCase()
+      contact => contact.name.toLowerCase() === name.toLowerCase() || contact.number === number
     );
 
     if (existingContact) {
-      alert(`${name} is already in contacts.`);
+      alert(`${name} or ${number} is already in contacts.`);
       return;
     }
 
